@@ -166,6 +166,38 @@
             overflow: auto;
         }
 
+
+		/* 将菜单容器移到页面最右侧并设置 z-index */
+.menu-container {
+    width: 200px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    position: fixed;
+    top: 100px;
+    right: 0;
+    height: calc(100vh - 30px);
+    overflow-y: auto;
+}
+
+		/* 菜单项的样式 */
+		.menu-item {
+			margin-bottom: 15px;
+		}
+
+		/* 菜单标题的样式 */
+		.menu-header {
+			font-weight: bold;
+			cursor: pointer;
+		}
+
+		/* 子菜单项的样式 */
+		.submenu {
+			list-style: none;
+			padding-left: 0;
+			display: none; /* 初始状态下隐藏子菜单 */
+		}
+
+
     </style>
 </head>
 <body>
@@ -184,7 +216,7 @@
 			<br>本刊目前只接受电子投稿<a href="HanGangWork96@outlook.com">投稿邮箱/submission</a></div>
 			 
         </div>
-			 <div class="journal-container">
+		<div class="journal-container">
 				<!-- 期刊 1 -->
 				<div class="journal">
 					<img src="1.jpg" alt="封面">
@@ -194,8 +226,22 @@
 					</div>
 				</div>
 				<!-- 添加更多期刊 ... -->
-			</div>
+		</div>
+		
 
+	<!-- 新的容器用于放置菜单栏 -->
+		<div class="menu-container">
+		<div><h3><strong>所有发行</strong></h3></div>
+			<div class="menu-item">
+				<div class="menu-header">&nbsp2023</div>
+				<ul class="submenu">
+					<li>Volume 1</li>
+					<li>Volume 2</li>
+					<!-- 添加更多子菜单项... -->
+				</ul>
+			</div>
+			<!-- 添加更多菜单项... -->
+		</div>
     <!-- 目录弹出框 -->
     <div class="catalog-modal">
         <div class="catalog-content">
@@ -205,20 +251,38 @@
     </div>
 	<script>
    // 获取目录按钮
-const catalogButtons = document.querySelectorAll('.catalog-button');
+	const catalogButtons = document.querySelectorAll('.catalog-button');
 
-// 监听目录按钮的点击事件
-catalogButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        e.preventDefault(); // 阻止默认行为（打开链接）
-        
-        // 获取 PDF 文件的链接
-        const pdfUrl = button.getAttribute('href');
+	// 监听目录按钮的点击事件
+	catalogButtons.forEach(button => {
+		button.addEventListener('click', (e) => {
+			e.preventDefault(); // 阻止默认行为（打开链接）
+			
+			// 获取 PDF 文件的链接
+			const pdfUrl = button.getAttribute('href');
 
-        // 打开 PDF 文件
-        window.open(pdfUrl, '_blank');
-    });
-});
+			// 打开 PDF 文件
+			window.open(pdfUrl, '_blank');
+		});
+	});
+
+	// 获取所有菜单标题元素
+	const menuHeaders = document.querySelectorAll('.menu-header');
+
+	menuHeaders.forEach(header => {
+		header.addEventListener('click', () => {
+			// 获取点击菜单标题下的子菜单
+			const submenu = header.nextElementSibling;
+
+			// 切换子菜单的显示状态
+			if (submenu.style.display === 'block') {
+				submenu.style.display = 'none';
+			} else {
+				submenu.style.display = 'block';
+			}
+		});
+	});
+
 
     </script>
 	<footer>&copy Scientiae Linguae 版权所有</footer>
