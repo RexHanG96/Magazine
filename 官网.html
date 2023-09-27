@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientiae Linguae</title>
+    <link rel="stylesheet" href="1.css">
+</head>
+<body onload="showPage('home')"> <!-- 添加onload事件，直接显示主页内容 -->
+    <header class="header">
+        <nav class="nav">
+            <h1 class="header-title">Scientiae Linguae STU</h1>
+            <ul>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('home')">首页/Home Page</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('catalog')">期刊目录/List of Issues</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('submission')">投稿指南/Submission</a></li>
+				<li class="nav-item"><a href="#" class="nav-link" onclick="showPage('editorial board')">编委会/Editorial Board</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="showPage('contact')">联系我们/Contact Us</a></li>
+            </ul>			
+        </nav>
+    </header>
+
+    <main class="content">
+        <div id="home" class="page">
+            <!-- 首页内容 -->
+            <section class="featured">
+                <h2 class="section-title">最新消息/Latest News</h2>
+                <!-- 这里可以添加精选文章的列表 -->
+				<h2 class="section-title">精选文章/Selected Articles</h2>
+                <!-- 这里可以添加精选文章的列表 -->
+            </section>
+            <section class="about">
+                <h2 class="section-title">关于本刊/About the Journal</h2>
+                <p class="about-text"><strong>Scientiae Linguae STU 是一本专注于语言学与相关领域（包括但不限于认知神经与脑科学、心理学、生物学、计算机科学、哲学、数学）的开源电子期刊。 本刊主要面向本硕博学生群体，致力于推动不同视角之下关于语言底层机制的讨论</strong></p>
+                <p class="about-text"><strong>Scientiae Linguae STU is an open access e-journal focusing on linguistics and its relative disciplines such as cognitive neuroscience and brain science, computer science, psychology, biology, philosophy, mathematics etc. 
+				Targeting mainly the students at all levels of higher education, The journal is dedicated to the discussions of the fundamental mechanisms of language from multiple perspectives.</strong></p>
+			</section>
+        </div>
+		
+		<div id="catalog" class="page">
+				<!-- 期刊目录页面内容 -->
+				<h2 class="section-title">期刊目录/List of Issues</h2>
+				
+				<!-- 添加年份和卷数的菜单 -->
+				<ul class="catalog-menu">
+					<li class="menu-item">
+						<a href="#" class="main-menu" onclick="toggleSubMenu(this)">
+							 <span class="arrow">+</span> <!-- 将箭头改成 ">" -->&nbsp &nbsp
+							<div>
+								2023
+							</div>
+						</a>
+						<ul class="volume-menu">
+							<li><a href="#">第1卷(敬请期待)</a></li>
+							<!-- 添加更多卷数 -->
+						</ul>
+					</li>
+					<!-- 添加更多年份 -->
+				</ul>
+			</div>
+
+		
+        <div id="submission" class="page">
+            <!-- 投稿指南页面内容 -->
+            <h2 class="section-title">投稿指南/Submission</h2>            
+			<h3 class="fade-in"  style="margin: 20px; font-size:20px;">本刊的投稿主题包括但不限于：</h3>
+			<p  class="fade-in" style="margin: 20px; color: #4F4F4F;">
+			<br><strong>生物语言学(Biolinguistics)、演化语言学(Evolutionary Linguistics)
+			<br>语言学史(linguistic Historiography)、语言哲学(Philosophy of language)
+			<br>数理语言学(Mathematical Lingusitcis)、计算语言学(Computational Linguistics)、心理语言学(Psycholinguistics)
+			<br>儿童语言习得(Child Language Acquisition)、语言的认知神经科学(Cognitive Neuroscience of Language)、言语病理与障碍(Speech Pathology and Disorders)
+			<br>语音学(Phonetics)、音系学(Phonology)、形态学(Morphology)、句法学(Syntax)、语义学(Semantics)、语用学(Pragmatics)、语言类型学(linguistic typology)</p>
+            <p class="fade-in" style="margin: 20px; font-size:20px;"><br>欢迎各位踊跃投稿！<br></strong></p>
+			<p class="fade-in" style="margin: 20px; font-size:20px; color: #9C9C9C;"><strong>投稿邮箱：HanGangWork96@outlook.com</strong></p>
+			<h3 class="fade-in"  style="margin: 20px;"><strong>来稿格式：待发布</strong></h3><br>			
+        </div>
+		
+		<div id="editorial board" class="page">
+            <!-- 编委会内容 -->
+            <h2 class="section-title">编委会/Editorial Board</h2>
+            <!-- 这里可以添加编委会的内容 -->
+			<p class="fade-in" style="margin: 20px; font-size:20px; color: #9C9C9C;"><strong>TBA</strong></p>
+        </div>
+		
+        <div id="contact" class="page">
+            <!-- 联系我们页面内容 -->
+            <h2 class="section-title">联系我们/Contact Us</h2>
+            <!-- 这里可以添加联系我们的内容 -->
+			<p class="fade-in" style="margin: 20px; font-size:20px; color: #9C9C9C;"><strong>联系邮箱：HanGangWork96@outlook.com</strong></p>
+			<p >
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="footer-text">&copy; Scientiae Linguae. All Rights Reserved.</p>
+    </footer>
+	
+
+    <script>
+        // JavaScript函数，用于显示指定ID的页面并淡入淡出效果
+        function showPage(pageId) {
+            // 隐藏所有页面
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.style.display = 'none';
+            });
+
+            // 显示指定页面并添加淡入效果
+            const pageToShow = document.getElementById(pageId);
+            pageToShow.style.display = 'block';
+            fadeIn(pageToShow);
+        }
+
+        // JavaScript函数，用于淡入效果
+        function fadeIn(element) {
+            let opacity = 0;
+            const timer = setInterval(function () {
+                if (opacity >= 1) {
+                    clearInterval(timer);
+                }
+                element.style.opacity = opacity;
+                opacity += 0.1;
+            }, 50);
+        }
+    // 获取所有年份的链接
+    const yearLinks = document.querySelectorAll('.year-toggle');
+
+    // 为每个年份链接添加点击事件处理程序
+    yearLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault(); // 阻止默认链接行为
+            const volumeMenu = this.nextElementSibling; // 获取下一个兄弟元素（卷数菜单）
+            
+            // 切换卷数菜单的显示/隐藏状态
+            if (volumeMenu.style.display === 'block') {
+                volumeMenu.style.display = 'none';
+            } else {
+                volumeMenu.style.display = 'block';
+            }
+        });
+    });
+	
+	    // JavaScript函数，用于切换子菜单的可见性和箭头旋转
+        function toggleSubMenu(menuItem) {
+            const subMenu = menuItem.nextElementSibling;
+            const arrow = menuItem.querySelector('.arrow');
+
+            if (subMenu.style.display === 'block') {
+                subMenu.style.display = 'none';
+                arrow.classList.remove('rotate-down');
+            } else {
+                subMenu.style.display = 'block';
+                arrow.classList.add('rotate-down');
+            }
+        }
+    </script>
+</body>
+</html>

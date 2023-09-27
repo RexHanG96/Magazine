@@ -1,0 +1,214 @@
+/* Reset some default styles for better consistency */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Times New Roman", 华文楷体, serif;
+    background-color: linear-gradient(90deg, #E8E8E8 0%,#FFFAF0 100%);
+    overflow: hidden; /* 隐藏水平滚动条 */
+}
+
+.header {
+    background-image: linear-gradient(90deg, #79CDCD 0%, #668B8B 100%);
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    animation: headerAnimation 2s ease-in-out;
+}
+
+.header-title {
+	font-family: "Times New Roman", 华文楷体, serif;
+    font-size: 48px;
+    margin-top: 20px;
+    animation: titleAnimation 2s ease-in-out;
+}
+
+.nav {
+    margin-top: 20px;
+    animation: navAnimation 2s ease-in-out;
+}
+/* 在导航条目上添加样式 */
+.nav-item {
+    display: inline-block; /* 或使用 display: inline; */
+    margin-right: 20px; /* 调整导航项之间的间距 */
+}
+
+/* 其他CSS样式保持不变 */
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #FF9900;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 24px;
+    margin: 40px 0;
+    animation: sectionTitleAnimation 2s ease-in-out;
+	font-family: "Times New Roman", 华文楷体, serif;
+}
+
+.about-text {
+    text-align: center;
+    font-size: 18px;
+    padding: 0 20%;
+    margin-bottom: 40px;
+    animation: aboutTextAnimation 2s ease-in-out;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    animation: footerAnimation 2s ease-in-out;
+}
+
+@keyframes headerAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes titleAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes navAnimation {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes sectionTitleAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes aboutTextAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes footerAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page {
+            display: none; /* 初始状态下隐藏所有页面 */
+        }
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 包含所有内容的容器 */
+.main-container {
+    min-height: 100%; /* 最小高度为100%以确保滚动条正常工作 */
+    padding-bottom: 50px; /* 为底部版权栏留出空间，可根据实际情况调整 */
+}
+html, body {
+    height: 100%;
+    margin: 0; /* 确保没有额外的外边距 */
+    overflow: auto; /* 在内容溢出时显示滚动条 */
+}
+
+
+ /* 基本样式 */
+.catalog-menu {
+	list-style-type: none;
+	padding: 0;
+}
+
+.menu-item {
+	position: relative;
+}
+
+.main-menu {
+	display: block;
+	width: 200px;
+	padding: 10px;
+	background-color:#ffffff;
+	text-align: left;
+	cursor: pointer;
+	border-radius: 10px; /* 添加圆角 */
+	display: flex; /* 使用 Flex 布局 */
+	justify-content: flex-start; /* 左对齐 */
+	align-items: center; /* 垂直居中对齐 */
+	text-decoration:none;
+	font-size:28px;
+	font-weight: bold;
+	font-family: "Times New Roman", 华文楷体, serif;
+}
+
+.arrow {
+	font-family: "Times New Roman", Times, serif; /* 设置字体为 Times New Roman */
+	font-weight: bold; /* 加粗字体 */
+	transition: transform 0.3s ease;
+}
+
+.volume-menu {
+	display: none;
+	margin-left: 10px;
+	font-size:20px;
+	font-weight: bold;
+	font-family: "Times New Roman", 华文楷体, serif;
+}
+
+/* 旋转样式 */
+.rotate-down {
+	transform: rotate(90deg); /* 旋转90度 */
+}
